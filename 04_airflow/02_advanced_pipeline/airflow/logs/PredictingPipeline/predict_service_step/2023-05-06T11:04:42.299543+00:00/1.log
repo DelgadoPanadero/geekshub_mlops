@@ -1,0 +1,586 @@
+[2023-05-06 11:04:43,345] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: PredictingPipeline.predict_service_step manual__2023-05-06T11:04:42.299543+00:00 [queued]>
+[2023-05-06 11:04:43,354] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: PredictingPipeline.predict_service_step manual__2023-05-06T11:04:42.299543+00:00 [queued]>
+[2023-05-06 11:04:43,354] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 11:04:43,354] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2023-05-06 11:04:43,354] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 11:04:43,364] {taskinstance.py:1264} INFO - Executing <Task(DockerOperatorWithExposedPorts): predict_service_step> on 2023-05-06 11:04:42.299543+00:00
+[2023-05-06 11:04:43,370] {standard_task_runner.py:52} INFO - Started process 1035 to run task
+[2023-05-06 11:04:43,372] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'PredictingPipeline', 'predict_service_step', 'manual__2023-05-06T11:04:42.299543+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/predict_pipeline.py', '--cfg-path', '/tmp/tmpvvlxo50f', '--error-file', '/tmp/tmpx7g5fbem']
+[2023-05-06 11:04:43,373] {standard_task_runner.py:77} INFO - Job 13: Subtask predict_service_step
+[2023-05-06 11:04:43,411] {logging_mixin.py:109} INFO - Running <TaskInstance: PredictingPipeline.predict_service_step manual__2023-05-06T11:04:42.299543+00:00 [running]> on host 2c294513ab10
+[2023-05-06 11:04:43,456] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=PredictingPipeline
+AIRFLOW_CTX_TASK_ID=predict_service_step
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-06T11:04:42.299543+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-06T11:04:42.299543+00:00
+[2023-05-06 11:04:43,468] {docker.py:236} INFO - Starting docker container from image ml_project
+[2023-05-06 11:04:43,471] {docker.py:247} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2023-05-06 11:04:44,747] {docker_operator_with_exposed_ports.py:93} INFO - b'2023-05-06 11:04:44,747 DEBUG: Using selector: EpollSelector\n'
+[2023-05-06 11:04:44,753] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     Started server process [7]\nINFO:     Waiting for application startup.\n'
+[2023-05-06 11:04:44,753] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     Application startup complete.\n'
+[2023-05-06 11:04:44,753] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\n'
+[2023-05-06 11:04:45,490] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50578 - "GET /ping HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,500] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50594 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,505] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50598 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,510] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50606 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,516] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50618 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,522] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50622 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,527] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50624 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,532] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50638 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,537] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50652 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,541] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50668 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,546] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50678 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,552] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50684 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,557] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50700 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,562] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50708 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,567] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50722 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,572] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50730 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,576] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50732 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,581] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50744 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,586] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50748 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,591] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50760 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,596] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50774 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,601] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50784 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,606] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50786 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,610] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50798 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,615] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50810 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,621] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50818 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,626] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50822 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,631] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50824 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,636] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50826 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,641] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50828 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,645] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50830 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,651] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50838 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,657] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50846 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,663] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50856 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,667] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50870 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,672] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50872 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,676] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50888 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,680] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50898 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,685] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50912 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,690] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50924 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,702] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50926 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,708] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50934 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,714] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50936 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,721] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50946 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,726] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50954 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,731] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50966 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,735] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50976 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,740] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:50990 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,745] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51004 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,749] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51020 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,755] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51022 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,760] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51030 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,764] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51032 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,769] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51042 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,774] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51052 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,778] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51064 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,783] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51076 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,788] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51090 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,793] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51096 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,798] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51102 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,802] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51114 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,806] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51128 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,811] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51144 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,816] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51158 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,821] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51162 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,826] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51170 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,831] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51174 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,835] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51176 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,840] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51186 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,844] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51198 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,849] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51202 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,853] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51212 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,858] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51222 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,863] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51238 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,867] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51246 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,872] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51260 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,876] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51272 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,880] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51282 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,885] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51286 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,891] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51298 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,896] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51310 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,901] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51320 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,905] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51326 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,910] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51342 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,915] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51358 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,921] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51372 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,926] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51376 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,931] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51378 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,936] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51386 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,940] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51396 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,945] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51408 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,950] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51422 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,957] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51436 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,963] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51438 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,968] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51454 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,974] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51460 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,978] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51472 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,983] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51482 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,988] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51484 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,993] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51496 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:45,998] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51506 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,003] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51516 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,007] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51520 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,012] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51530 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,017] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51538 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,022] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51542 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,027] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51552 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,032] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51554 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,036] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51566 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,041] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51570 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,045] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51574 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,050] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51582 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,055] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51592 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,060] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51598 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,065] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51610 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,070] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51622 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,074] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51636 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,079] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51644 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,084] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51650 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,089] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51656 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,094] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51668 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,099] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51682 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,103] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51696 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,108] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51698 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,112] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51700 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,118] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51710 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,124] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51714 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,129] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51728 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,134] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51732 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,138] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51744 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,143] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51746 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,147] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51752 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,153] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51754 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,158] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51758 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,163] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51762 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,168] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51770 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,173] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51778 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,178] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51794 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,182] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51796 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,188] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51798 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,194] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51814 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,199] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51822 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,203] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51834 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,208] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51836 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,213] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51848 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,217] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51856 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,222] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51868 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,227] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51870 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,232] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51878 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,238] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51884 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:46,243] {docker_operator_with_exposed_ports.py:93} INFO - b'INFO:     172.20.0.3:51888 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:59,653] {taskinstance.py:1718} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.42/containers/create?name=mlproject
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 243, in _run_image
+    return self._run_image_with_mounts(self.mounts + [tmp_mount], add_tmp_variable=True)
+  File "/opt/airflow/plugins/operators/docker_operator_with_exposed_ports.py", line 76, in _run_image_with_mounts
+    tty=self.tty,
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 428, in create_container
+    return self.create_container_from_config(config, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 439, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.42/containers/create?name=mlproject: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /tmp/airflowtmpysa8jzmi")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1460, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1516, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 376, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 252, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/opt/airflow/plugins/operators/docker_operator_with_exposed_ports.py", line 101, in _run_image_with_mounts
+    f'lines {joined_log_lines}')
+Exception: Docker container failed: {'StatusCode': 137} lines b'2023-05-06 11:04:44,747 DEBUG: Using selector: EpollSelector\n'
+b'INFO:     Started server process [7]\nINFO:     Waiting for application startup.\n'
+b'INFO:     Application startup complete.\n'
+b'INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\n'
+b'INFO:     172.20.0.3:50578 - "GET /ping HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50594 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50598 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50606 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50618 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50622 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50624 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50638 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50652 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50668 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50678 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50684 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50700 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50708 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50722 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50730 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50732 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50744 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50748 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50760 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50774 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50784 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50786 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50798 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50810 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50818 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50822 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50824 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50826 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50828 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50830 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50838 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50846 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50856 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50870 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50872 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50888 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50898 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50912 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50924 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50926 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50934 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50936 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50946 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50954 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50966 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50976 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50990 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51004 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51020 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51022 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51030 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51032 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51042 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51052 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51064 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51076 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51090 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51096 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51102 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51114 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51128 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51144 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51158 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51162 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51170 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51174 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51176 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51186 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51198 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51202 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51212 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51222 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51238 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51246 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51260 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51272 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51282 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51286 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51298 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51310 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51320 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51326 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51342 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51358 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51372 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51376 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51378 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51386 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51396 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51408 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51422 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51436 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51438 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51454 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51460 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51472 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51482 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51484 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51496 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51506 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51516 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51520 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51530 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51538 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51542 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51552 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51554 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51566 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51570 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51574 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51582 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51592 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51598 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51610 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51622 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51636 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51644 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51650 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51656 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51668 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51682 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51696 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51698 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51700 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51710 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51714 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51728 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51732 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51744 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51746 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51752 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51754 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51758 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51762 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51770 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51778 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51794 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51796 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51798 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51814 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51822 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51834 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51836 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51848 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51856 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51868 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51870 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51878 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51884 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51888 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:59,662] {taskinstance.py:1282} INFO - Marking task as FAILED. dag_id=PredictingPipeline, task_id=predict_service_step, execution_date=20230506T110442, start_date=20230506T110443, end_date=20230506T110459
+[2023-05-06 11:04:59,678] {standard_task_runner.py:92} ERROR - Failed to execute job 13 for task predict_service_step
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.42/containers/create?name=mlproject
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 243, in _run_image
+    return self._run_image_with_mounts(self.mounts + [tmp_mount], add_tmp_variable=True)
+  File "/opt/airflow/plugins/operators/docker_operator_with_exposed_ports.py", line 76, in _run_image_with_mounts
+    tty=self.tty,
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 428, in create_container
+    return self.create_container_from_config(config, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 439, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.42/containers/create?name=mlproject: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /tmp/airflowtmpysa8jzmi")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1460, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1516, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 376, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 252, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/opt/airflow/plugins/operators/docker_operator_with_exposed_ports.py", line 101, in _run_image_with_mounts
+    f'lines {joined_log_lines}')
+Exception: Docker container failed: {'StatusCode': 137} lines b'2023-05-06 11:04:44,747 DEBUG: Using selector: EpollSelector\n'
+b'INFO:     Started server process [7]\nINFO:     Waiting for application startup.\n'
+b'INFO:     Application startup complete.\n'
+b'INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\n'
+b'INFO:     172.20.0.3:50578 - "GET /ping HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50594 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50598 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50606 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50618 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50622 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50624 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50638 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50652 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50668 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50678 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50684 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50700 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50708 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50722 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50730 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50732 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50744 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50748 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50760 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50774 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50784 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50786 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50798 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50810 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50818 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50822 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50824 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50826 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50828 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50830 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50838 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50846 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50856 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50870 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50872 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50888 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50898 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50912 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50924 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50926 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50934 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50936 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50946 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50954 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50966 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50976 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:50990 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51004 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51020 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51022 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51030 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51032 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51042 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51052 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51064 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51076 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51090 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51096 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51102 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51114 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51128 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51144 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51158 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51162 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51170 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51174 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51176 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51186 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51198 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51202 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51212 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51222 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51238 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51246 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51260 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51272 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51282 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51286 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51298 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51310 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51320 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51326 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51342 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51358 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51372 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51376 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51378 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51386 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51396 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51408 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51422 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51436 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51438 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51454 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51460 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51472 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51482 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51484 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51496 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51506 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51516 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51520 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51530 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51538 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51542 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51552 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51554 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51566 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51570 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51574 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51582 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51592 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51598 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51610 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51622 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51636 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51644 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51650 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51656 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51668 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51682 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51696 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51698 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51700 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51710 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51714 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51728 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51732 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51744 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51746 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51752 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51754 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51758 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51762 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51770 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51778 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51794 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51796 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51798 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51814 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51822 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51834 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51836 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51848 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51856 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51868 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51870 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51878 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51884 - "POST /predict HTTP/1.1" 200 OK\n'
+b'INFO:     172.20.0.3:51888 - "POST /predict HTTP/1.1" 200 OK\n'
+[2023-05-06 11:04:59,707] {local_task_job.py:154} INFO - Task exited with return code 1
+[2023-05-06 11:04:59,727] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/adelgado/Documentos/geekshub_mlops/01_pycaret/01_iris_classifier/src/mlruns/1/5a5e1aed4fe64791ac27f18d0fd910c3/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: 5a5e1aed4fe64791ac27f18d0fd910c3
+run_name: Session Initialized 8b38
+run_uuid: 5a5e1aed4fe64791ac27f18d0fd910c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1683302223513
+status: 1
+tags: []
+user_id: adelgado

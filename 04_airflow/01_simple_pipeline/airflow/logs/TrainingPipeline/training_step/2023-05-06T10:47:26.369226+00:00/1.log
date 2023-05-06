@@ -1,0 +1,104 @@
+[2023-05-06 10:47:27,132] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:47:26.369226+00:00 [queued]>
+[2023-05-06 10:47:27,144] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:47:26.369226+00:00 [queued]>
+[2023-05-06 10:47:27,144] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:47:27,144] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2023-05-06 10:47:27,144] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:47:27,156] {taskinstance.py:1264} INFO - Executing <Task(DockerOperator): training_step> on 2023-05-06 10:47:26.369226+00:00
+[2023-05-06 10:47:27,158] {standard_task_runner.py:52} INFO - Started process 221 to run task
+[2023-05-06 10:47:27,160] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'TrainingPipeline', 'training_step', 'manual__2023-05-06T10:47:26.369226+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline.py', '--cfg-path', '/tmp/tmpuovxhet3', '--error-file', '/tmp/tmp7acpn_wr']
+[2023-05-06 10:47:27,161] {standard_task_runner.py:77} INFO - Job 3: Subtask training_step
+[2023-05-06 10:47:27,204] {logging_mixin.py:109} INFO - Running <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:47:26.369226+00:00 [running]> on host 809e7c069509
+[2023-05-06 10:47:27,248] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=TrainingPipeline
+AIRFLOW_CTX_TASK_ID=training_step
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-06T10:47:26.369226+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-06T10:47:26.369226+00:00
+[2023-05-06 10:47:27,259] {docker.py:236} INFO - Starting docker container from image ml_project
+[2023-05-06 10:47:27,261] {taskinstance.py:1718} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.42/containers/create
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1460, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1516, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 376, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 243, in _run_image
+    return self._run_image_with_mounts(self.mounts + [tmp_mount], add_tmp_variable=True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 287, in _run_image_with_mounts
+    tty=self.tty,
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 428, in create_container
+    return self.create_container_from_config(config, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 439, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.42/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /home/adelgado/Documentos/geekshub_mlops/03_airflow/01_simple_pipeline/data")
+[2023-05-06 10:47:27,272] {taskinstance.py:1282} INFO - Marking task as FAILED. dag_id=TrainingPipeline, task_id=training_step, execution_date=20230506T104726, start_date=20230506T104727, end_date=20230506T104727
+[2023-05-06 10:47:27,281] {standard_task_runner.py:92} ERROR - Failed to execute job 3 for task training_step
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.42/containers/create
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1334, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1460, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1516, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 376, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 243, in _run_image
+    return self._run_image_with_mounts(self.mounts + [tmp_mount], add_tmp_variable=True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 287, in _run_image_with_mounts
+    tty=self.tty,
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 428, in create_container
+    return self.create_container_from_config(config, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 439, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.42/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /home/adelgado/Documentos/geekshub_mlops/03_airflow/01_simple_pipeline/data")
+[2023-05-06 10:47:27,292] {local_task_job.py:154} INFO - Task exited with return code 1
+[2023-05-06 10:47:27,317] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,6 @@
+artifact_location: file:///home/adelgado/Documentos/geekshub_mlops/01_pycaret/01_iris_classifier/src/mlruns/1
+creation_time: 1683301699381
+experiment_id: '1'
+last_update_time: 1683301699381
+lifecycle_stage: active
+name: clf-default-name

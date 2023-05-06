@@ -1,0 +1,25 @@
+[2023-05-06 10:48:47,756] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:48:47.190064+00:00 [queued]>
+[2023-05-06 10:48:47,762] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:48:47.190064+00:00 [queued]>
+[2023-05-06 10:48:47,762] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:48:47,762] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2023-05-06 10:48:47,762] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:48:47,770] {taskinstance.py:1264} INFO - Executing <Task(DockerOperator): training_step> on 2023-05-06 10:48:47.190064+00:00
+[2023-05-06 10:48:47,773] {standard_task_runner.py:52} INFO - Started process 294 to run task
+[2023-05-06 10:48:47,775] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'TrainingPipeline', 'training_step', 'manual__2023-05-06T10:48:47.190064+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline.py', '--cfg-path', '/tmp/tmpk4lh1vjn', '--error-file', '/tmp/tmpf96zoajp']
+[2023-05-06 10:48:47,775] {standard_task_runner.py:77} INFO - Job 4: Subtask training_step
+[2023-05-06 10:48:47,812] {logging_mixin.py:109} INFO - Running <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:48:47.190064+00:00 [running]> on host 809e7c069509
+[2023-05-06 10:48:47,855] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=TrainingPipeline
+AIRFLOW_CTX_TASK_ID=training_step
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-06T10:48:47.190064+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-06T10:48:47.190064+00:00
+[2023-05-06 10:48:47,865] {docker.py:236} INFO - Starting docker container from image ml_project
+[2023-05-06 10:48:47,867] {docker.py:247} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2023-05-06 10:48:48,909] {docker.py:297} INFO - 2023-05-06 10:48:48,909 INFO: Lectura del dataset. Features: ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']. Rows: 150.
+[2023-05-06 10:48:48,916] {docker.py:297} INFO - 2023-05-06 10:48:48,916 INFO: Metricas de entrenamiento. Accuracy: 0.9733333333333334.
+[2023-05-06 10:48:49,227] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=TrainingPipeline, task_id=training_step, execution_date=20230506T104847, start_date=20230506T104847, end_date=20230506T104849
+[2023-05-06 10:48:49,274] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-05-06 10:48:49,294] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

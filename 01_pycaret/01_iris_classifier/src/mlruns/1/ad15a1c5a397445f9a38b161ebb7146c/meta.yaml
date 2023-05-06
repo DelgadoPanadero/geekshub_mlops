@@ -1,0 +1,15 @@
+artifact_uri: file:///home/adelgado/Documentos/geekshub_mlops/01_pycaret/01_iris_classifier/src/mlruns/1/ad15a1c5a397445f9a38b161ebb7146c/artifacts
+end_time: 1683301804834
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: ad15a1c5a397445f9a38b161ebb7146c
+run_name: SVM - Linear Kernel
+run_uuid: ad15a1c5a397445f9a38b161ebb7146c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1683301804811
+status: 3
+tags: []
+user_id: adelgado

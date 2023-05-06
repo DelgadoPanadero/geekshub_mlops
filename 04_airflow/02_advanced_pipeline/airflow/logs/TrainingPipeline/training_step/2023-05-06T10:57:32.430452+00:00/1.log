@@ -1,0 +1,26 @@
+[2023-05-06 10:57:35,524] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:57:32.430452+00:00 [queued]>
+[2023-05-06 10:57:35,532] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:57:32.430452+00:00 [queued]>
+[2023-05-06 10:57:35,533] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:57:35,533] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2023-05-06 10:57:35,533] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-06 10:57:35,543] {taskinstance.py:1264} INFO - Executing <Task(DockerOperatorWithExposedPorts): training_step> on 2023-05-06 10:57:32.430452+00:00
+[2023-05-06 10:57:35,546] {standard_task_runner.py:52} INFO - Started process 277 to run task
+[2023-05-06 10:57:35,548] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'TrainingPipeline', 'training_step', 'manual__2023-05-06T10:57:32.430452+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline.py', '--cfg-path', '/tmp/tmpq863wojl', '--error-file', '/tmp/tmpwail20yl']
+[2023-05-06 10:57:35,548] {standard_task_runner.py:77} INFO - Job 4: Subtask training_step
+[2023-05-06 10:57:35,581] {logging_mixin.py:109} INFO - Running <TaskInstance: TrainingPipeline.training_step manual__2023-05-06T10:57:32.430452+00:00 [running]> on host 2c294513ab10
+[2023-05-06 10:57:35,606] {logging_mixin.py:109} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:156 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2023-05-06 10:57:35,620] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=TrainingPipeline
+AIRFLOW_CTX_TASK_ID=training_step
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-06T10:57:32.430452+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-06T10:57:32.430452+00:00
+[2023-05-06 10:57:35,631] {docker.py:236} INFO - Starting docker container from image ml_project
+[2023-05-06 10:57:35,633] {docker.py:247} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2023-05-06 10:57:36,586] {docker_operator_with_exposed_ports.py:93} INFO - b"2023-05-06 10:57:36,586 INFO: Lectura del dataset. Features: ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']. Rows: 150.\n"
+[2023-05-06 10:57:36,593] {docker_operator_with_exposed_ports.py:93} INFO - b'2023-05-06 10:57:36,593 INFO: Metricas de entrenamiento. Accuracy: 0.9733333333333334.\n'
+[2023-05-06 10:57:36,908] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=TrainingPipeline, task_id=training_step, execution_date=20230506T105732, start_date=20230506T105735, end_date=20230506T105736
+[2023-05-06 10:57:36,923] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-05-06 10:57:36,945] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
