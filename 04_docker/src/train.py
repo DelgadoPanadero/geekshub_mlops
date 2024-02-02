@@ -14,6 +14,7 @@ def train(args):
 
     # Leemos el dataset
     df_train = pd.read_csv(args.data_path)
+
     X_train = df_train.drop(["Species"],axis=1)
     y_train = df_train["Species"]
 
@@ -22,6 +23,9 @@ def train(args):
 
     # Entrenamiento con preprocesamiento
     model = CustomModel(max_iter=args.max_iter).fit(X_train, y_train)
+
+    logging.info('Metricas de entrenamiento. Accuracy: ' +
+        f'{model.score(X_train, y_train)}.')
 
     # Escribimos el modelo
     model = model.save(args.model_path)
@@ -37,4 +41,3 @@ if __name__=='__main__':
     args = parser.parse_args()
 
     train(args)
-

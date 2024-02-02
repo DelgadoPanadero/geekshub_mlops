@@ -7,10 +7,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
 
-logging.basicConfig(format='%(asctime)s %(levelname)s: %(message)s',
-    level=logging.DEBUG)
-
-
 class CustomModel():
 
     def __init__(self, max_iter: int = 100):
@@ -40,16 +36,11 @@ class CustomModel():
 
     def fit(self, X: pd.DataFrame, y: pd.Series):
 
-
-
         _X = self._processor.fit_transform(X)
         self._predictor.fit(_X,y)
 
         self._features = set(X.columns.to_list())
         self._is_fitted = True
-
-        logging.info('Metricas de entrenamiento. Accuracy: ' +
-            f'{self._predictor.score(self._processor.transform(X),y)}.')
 
         return self
 
@@ -62,6 +53,13 @@ class CustomModel():
         return y
 
 
+    def score(self, X: pd.DataFrame, y: pd.DataFrame):
+
+        return self._predictor.score(
+            self._processor.transform(X), y
+            )
+
+
     def save(self, model_path: str):
 
         with open(model_path, "wb") as fout:
@@ -71,10 +69,6 @@ class CustomModel():
 
     def load(self, model_path: str):
 
-        try:
-            with open(model_path, "rb") as fin:
-                self = pickle.load(fin)
-        except Exception as error:
-            logging.critical(f"Error al leer el modelo: {error}")
-
+        with open(model_path, "rb") as fin:
+            self = pickle.load(fin)
         return self
