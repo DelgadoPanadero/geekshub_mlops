@@ -1,6 +1,8 @@
 import pickle
 import pandas as pd
 from sklearn.pipeline import Pipeline
+from sklearn.compose import make_column_selector
+from sklearn.compose import make_column_transformer
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import OneHotEncoder
 
@@ -8,10 +10,15 @@ class HousePricingModel():
 
     def __init__(self, n_estimators, max_depth):
         self.model = Pipeline([
-            ('encoder', OneHotEncoder()),
+            ('encoder', make_column_transformer((
+                OneHotEncoder(),
+                make_column_selector(dtype_include=object)
+                ))
+            ),
             ('model', RandomForestRegressor(
-            n_estimators=n_estimators,
-            max_depth=max_depth)
+                n_estimators=n_estimators,
+                max_depth=max_depth
+                )
             )])
 
     def fit(self,X,y):
