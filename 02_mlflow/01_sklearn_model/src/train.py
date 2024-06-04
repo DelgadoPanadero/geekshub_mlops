@@ -3,7 +3,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from sklearn.linear_model import LogisticRegression
 
-load_dotenv('src/.env.mlflow')
+#load_dotenv('src/.env.mlflow')
 max_iter=100
 
 # Leemos los datos
