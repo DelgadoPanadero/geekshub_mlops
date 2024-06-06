@@ -1,18 +1,19 @@
+import os
 import mlflow
 import pandas as pd
 from dotenv import load_dotenv
 
-#load_dotenv('src/.env.mlflow')
+load_dotenv('src/.env.mlflow')
 
 # Seleccionamos el modelo
-name = "iris_sklearn_model"
+name = os.environ['MODEL_NAME']
 version = 1
 uri = f"models:/{name}/{version}"
 
 # Leemos los datos
-data = pd.read_csv('data/iris.csv')
-X = data.drop('Species',axis=1)
-y = data[['Species']]
+data = pd.read_csv(os.environ['DATASET_PATH'])
+X = data.drop(os.environ['TARGET_NAME'],axis=1)
+y = data[os.environ['TARGET_NAME']]
 
 # Podemos obtener una referencia al modelo a # partir de su URI
 model = mlflow.pyfunc.load_model(model_uri=uri)

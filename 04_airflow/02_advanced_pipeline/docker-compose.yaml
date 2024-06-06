@@ -29,9 +29,9 @@ x-airflow-common:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
-    - ./data:/opt/airflow/bucket
+    - ./bucket:/opt/airflow/bucket
     # Volumen al socket de docker para poder usar DockerOperator
-    - /var/run/docker.sock:/var/run/docker.sock         
+    - /var/run/docker.sock:/var/run/docker.sock
   # AIRFLOW_UID=root
   user: "${AIRFLOW_UID:-root}:0"
   depends_on:

@@ -26,7 +26,7 @@ default_args = {
     'retry_delay'           : timedelta(minutes=5)
     }
 
-BUCKET = '/home/adelgado//Documentos/geekshub_mlops/04_airflow/02_advanced_pipeline'
+PROJECT_DIR=os.environ["PROJECT_DIR"]
 IMAGE = 'ml_project'
 
 params = {
@@ -34,10 +34,6 @@ params = {
     'container_name'      : IMAGE.replace('_',''),
     'dataset_name'        : 'predict_iris.csv',
     'model_name'          : '2023-04-19T19:28:38.663405+00:00_ml_project.pkl',
-    'project_dir'         : BUCKET,
-    'data_dir_path'       : os.path.join(BUCKET, 'bucket/data'),
-    'model_dir_path'      : os.path.join(BUCKET, 'bucket/model'),
-    'result_dir_path'     : os.path.join(BUCKET, 'bucket/results'),
     'port'                : 8000,
 }
 
@@ -55,12 +51,12 @@ with DAG(
         auto_remove=True,
         entrypoint=['sh','predict.sh'],
         mount_tmp_dir=True,
-        network_mode='airflow_default',
+        network_mode='02_advanced_pipeline_default',
         container_name="{{ params.container_name }}",
         port="{{ params.port }}",
         mounts=[
             Mount(
-                source='{{ params.model_dir_path }}',
+                source=PROJECT_DIR+'/bucket/model',
                 target='/home/input/',
                 type='bind'
             )
@@ -92,14 +88,14 @@ with DAG(
         mount_tmp_dir=True,
         mounts=[
             Mount(
-                source = '{{ params.project_dir }}' + \
+                source = PROJECT_DIR + \
                     '/airflow/logs/PredictingPipeline/' + \
                     'request_predictions_step/{{ execution_date }}/',
                 target='/home/input/',
                 type='bind'
             ),
             Mount(
-                source='{{ params.result_dir_path }}',
+                source = PROJECT_DIR + "/bucket/results",
                 target='/home/output/',
                 type='bind'
             ),
