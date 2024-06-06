@@ -19,14 +19,14 @@ default_args = {
     'retries'            : 0,
     }
 
-PROJECT_DIR ='/home/adelgado/Documentos/geekshub_mlops/04_airflow/01_simple_pipeline'
 IMAGE = 'ml_project'
+PROJECT_DIR= os.environ['PROJECT_DIR']
 
 params = {
     'image_name'          : IMAGE,
     'dataset_name'        : 'iris.csv',
     'model_name'          : IMAGE + '.pkl',
-    'param_max_iter'      : 100,
+    'param_max_iter'      : 100
 }
 
 with DAG(
@@ -36,8 +36,6 @@ with DAG(
     catchup=False,
 ) as dag:
 
-
-
     t1 = DockerOperator(
         task_id='training_step',
         image="{{ params.image_name }}",
@@ -46,12 +44,12 @@ with DAG(
         mount_tmp_dir=True,
         mounts=[
             Mount(
-                source = f'{PROJECT_DIR}/data',
+                source = PROJECT_DIR + '/data',
                 target='/home/input/',
                 type='bind'
             ),
             Mount(
-                source = f'{PROJECT_DIR}/model/',
+                source = PROJECT_DIR + '/model/',
                 target='/home/output/',
                 type='bind'
             )

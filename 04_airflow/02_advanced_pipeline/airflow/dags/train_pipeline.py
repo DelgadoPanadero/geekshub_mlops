@@ -18,16 +18,14 @@ default_args = {
     'retries'            : 0,
     }
 
-BUCKET = '/home/adelgado//Documentos/geekshub_mlops/04_airflow/02_advanced_pipeline'
 IMAGE = 'ml_project'
+PROJECT_DIR=os.environ["PROJECT_DIR"]
+
 
 params = {
     'image_name'          : IMAGE,
     'dataset_name'        : 'iris.csv',
     'model_name'          : IMAGE + '.pkl',
-    'project_dir'         : BUCKET,
-    'data_dir_path'       : os.path.join(BUCKET, 'bucket/data'),
-    'model_dir_source'    : os.path.join(BUCKET, 'bucket/model'),
     'param_test_size'     : 0.2,
     'param_random_state'  : 0,
     'param_max_iter'      : 100,
@@ -46,18 +44,17 @@ with DAG(
         auto_remove=True,
         command=[
             'cp',
-
             '/home/input/{{ params.dataset_name }}',
             '/home/output/{{ params.dataset_name }}'],
         mount_tmp_dir=True,
         mounts=[
             Mount(
-                source='{{ params.data_dir_path }}',
+                source=PROJECT_DIR +  '/bucket/data',
                 target='/home/input/',
                 type='bind'
             ),
             Mount(
-                source= '{{ params.project_dir }}' + \
+                source=PROJECT_DIR + \
                     '/airflow/logs/TrainingPipeline/dataset_step/' + \
                     '{{ execution_date }}/',
                 target='/home/output/',
@@ -75,14 +72,14 @@ with DAG(
         mount_tmp_dir=True,
         mounts=[
             Mount(
-                source = '{{ params.project_dir }}' + \
+                source = PROJECT_DIR + \
                     '/airflow/logs/TrainingPipeline/dataset_step/' + \
                     '{{ execution_date }}/',
                 target='/home/input/',
                 type='bind'
             ),
             Mount(
-                source = '{{ params.project_dir }}' + \
+                source = PROJECT_DIR + \
                     '/airflow/logs/TrainingPipeline/training_step/' + \
                     '{{ execution_date }}/',
                 target='/home/output/',
@@ -107,14 +104,14 @@ with DAG(
         mount_tmp_dir=True,
         mounts=[
             Mount(
-                source = '{{ params.project_dir }}' + \
+                source = PROJECT_DIR + \
                     '/airflow/logs/TrainingPipeline/training_step/' + \
                     '{{ execution_date }}/',
                 target='/home/input/',
                 type='bind'
             ),
             Mount(
-                source='{{ params.model_dir_source }}',
+                source=PROJECT_DIR + '/bucket/model',
                 target='/home/output/',
                 type='bind'
             ),
